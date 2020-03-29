@@ -48,5 +48,3 @@ function mergeRanges(rangesArr) {
 
   return combinedMeetings;
 };
-
-console.log(mergeRanges(ranges))
