@@ -3,12 +3,17 @@
 const strArr = [ 'h', 'e', 'l', 'l', 'o' ];
 
 function reverseStrInPlace(arr) {
-  for (let i = 0; i < arr.length - 1; i++) {
-    let splice = arr.splice(i + 1, 1);
-    arr.unshift(splice[0]);
+  let leftIdx = 0;
+  let rightIdx = arr.length - 1;
+
+  while(leftIdx < rightIdx) {
+    let tempVal = arr[leftIdx];
+    arr[leftIdx] = arr[rightIdx];
+    arr[rightIdx] = tempVal;
+
+    leftIdx++;
+    rightIdx--;
   }
 
-  return strArr;
+  return arr;
 }
-
-console.log(reverseStrInPlace(strArr))
