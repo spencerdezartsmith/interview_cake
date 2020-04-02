@@ -22,7 +22,10 @@ function reverseWords(message) {
       }
     }
   }
+<<<<<<< HEAD
   
+=======
+>>>>>>> 833f2633d92d02dd8b1f023ed9d8ceca5207fb49
   return message;
 }
 
