@@ -36,6 +36,8 @@ function firstComeFirstServed(takeout, dinein, served) {
   let isFirstComeFirstServed = true;
 
   while (isFirstComeFirstServed) {
+    if (!servedOrders.length) return 'There are no served orders';
+    
     if (servedIdx >= served.length) break;
 
     if (takeout[currentTakeOutIdx] && served[servedIdx] === takeout[currentTakeOutIdx]) {
@@ -53,5 +55,3 @@ function firstComeFirstServed(takeout, dinein, served) {
 
   return isFirstComeFirstServed;
 }
-
-console.log('is first come first served', firstComeFirstServed(takeOutOrders, dineInOrders, servedOrders));
