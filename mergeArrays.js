@@ -3,28 +3,34 @@
 // We have our lists of orders sorted numerically already, in arrays. Write a function to merge our arrays of orders into one sorted array.
 
 // For example:
-const myArray = [3, 4, 6, 10, 11, 15];
-const alicesArray = [1, 5, 8, 12, 14, 19];
+const myArray = [2, 3, 4, 5, 6, 10, 11, 15];
+const alicesArray = [7, 8, 12, 14, 19];
 
 
 function mergeArrays(arrayOne, arrayTwo) {
-  const mergedrray = [];
+  const mergedArray = [];
   const combinedLength = arrayOne.length + arrayTwo.length;
   
   let firstArrayStartIdx = 0;
   let secondArrayStartIdx = 0;
   
   for (let i = 0; i < combinedLength; i++) {
+    if (firstArrayStartIdx >= arrayOne.length) {
+      return mergedArray.push(...arrayTwo.splice(secondArrayStartIdx));
+    } else if (secondArrayStartIdx >= arrayTwo.length) {
+      return mergedArray.push(arrayOne.splice(firstArrayStartIdx);
+    }
+
     if (arrayOne[firstArrayStartIdx] < arrayTwo[secondArrayStartIdx]) {
-      mergedrray[i] = arrayOne[firstArrayStartIdx];
+      mergedArray[i] = arrayOne[firstArrayStartIdx];
       firstArrayStartIdx++
     } else {
-      mergedrray[i] = arrayTwo[secondArrayStartIdx];
+      mergedArray[i] = arrayTwo[secondArrayStartIdx];
       secondArrayStartIdx++;
     }
   }
 
-  return mergedrray;
+  return mergedArray;
 }
 
 
