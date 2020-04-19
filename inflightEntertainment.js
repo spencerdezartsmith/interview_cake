@@ -23,5 +23,3 @@ function canTwoMoviesFillFlight(movieLengths, flightLength) {
 
   return false;
 }
-
-console.log('=======> canTwoMoviesFillFlight(movieLengths, flightLength)', canTwoMoviesFillFlight(movieLengths, flightLength));
