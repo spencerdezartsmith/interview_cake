@@ -10,22 +10,17 @@
 // "livci" should return false
 
 function isPalindrome(str) {
-  if (str.length === 0 || str.length === 1) return 'Please enter a valid string!' 
-  const charMap = str.split('').reduce((charMap, char) => {
-    if (!charMap[char]) charMap[char] = 1;
-    else charMap[char] += 1;
-    return charMap;
-  }, {});
+  const singleChars = new Set();
 
-  const odd = Object.values(charMap).filter(charCount => charCount % 2 !== 0);
+  for (let char of str) {
+    if (singleChars.has(char)) {
+      singleChars.delete(char);
+    } else {
+      singleChars.add(char);
+    }
+  }
 
-  if (odd.length === 1) return true;
+  if (singleChars.size === 1) return true;
   return false;
 }
-
-// isPalindrome("civic")
-console.log('civic', isPalindrome("civic"))
-console.log('ivicc', isPalindrome("ivicc"))
-console.log('civil', isPalindrome("civil"))
-console.log('livci', isPalindrome("livci"))
 
