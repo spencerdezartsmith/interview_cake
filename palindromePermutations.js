@@ -20,7 +20,7 @@ function isPalindrome(str) {
     }
   }
 
-  if (singleChars.size === 1) return true;
+  if (singleChars.size <= 1) return true;
   return false;
 }
 
